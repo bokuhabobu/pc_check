@@ -3516,6 +3516,17 @@ html {
             ※数値が小さいほど処理が速く、リアルタイム対話に向いています。
           </div>
         </div>
+
+        <div class="drawer-card">
+          <div class="drawer-card-title">3. sherpa-zipformer-8lang の推論方式に関する注記</div>
+          <p style="font-size:0.86rem;line-height:1.6;color:#334155;margin-bottom:8px;">
+            本ベンチマークにおいて、<strong>sherpa-zipformer-8lang</strong> は他のモデルと推論エンジンおよび処理方式が異なります。
+          </p>
+          <ul style="font-size:0.84rem;color:#334155;line-height:1.6;margin-left:18px;">
+            <li><strong>他モデル（Whisper, Gemma, Qwen等）：</strong> 音声全体を一括で読み込んで処理する「ファイル単位（バッチ）推論エンジン」（CTranslate2, LiteRT-LM等）を使用。</li>
+            <li><strong>sherpa-zipformer-8lang：</strong> マイク等の音声を細切れ（チャンク単位）で逐次流し込みながらリアルタイム処理する「ストリーミング推論専用エンジン」（Sherpa-ONNX）を使用。</li>
+          </ul>
+        </div>
       </div>
     </aside>
 
